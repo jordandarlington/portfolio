@@ -2,6 +2,7 @@ title: "Jordan Darlington"
 description: "Software Engineer"
 url: "http://jordandarlington.com"
 
-remote_theme: jekyll/minima@d4d779a
-minima:
-  skin: dark
+theme: jekyll-theme-minimal
+
+# minima:
+#   skin: dark
