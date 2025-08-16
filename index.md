@@ -1,5 +1,7 @@
 ---
+layout: page
 title: "Jordan Darlington"
+permalink: /
 ---
 
 # Jordan Darlington
