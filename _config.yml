@@ -2,7 +2,22 @@ title: "Jordan Darlington"
 description: "Software Engineer"
 url: "http://jordandarlington.com"
 
-theme: jekyll-theme-minimal
+theme: minima
 
-# minima:
-#   skin: dark
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+minima:
+  skin: dark
+
+social_links:
+  - title: "Email"
+    icon: "envelope"
+    url: "mailto:hello@jordandarlington.com"
+  - title: "GitHub"
+    icon: "github"
+    url: "https://github.com/jordandarlington"
+  - title: "LinkedIn"
+    icon: "linkedin"
+    url: "https://www.linkedin.com/in/jordan-darlington/"
