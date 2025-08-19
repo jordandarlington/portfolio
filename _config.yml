@@ -1,5 +1,9 @@
 title: "Jordan Darlington"
-description: "Software Engineer"
+author:
+  name: "Jordan Darlington"
+  email: "hello@jordandarlington.com"
+description: 
+email: "hello@jordandarlington.com"
 url: "http://jordandarlington.com"
 
 theme: minima
@@ -7,17 +11,28 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+
+timezone: "Europe/London"
+permalink: pretty
 
 minima:
   skin: dark
-
   social_links:
-    - title: "Email"
-      icon: "envelope"
-      url: "mailto:hello@jordandarlington.com"
     - title: "GitHub"
-      icon: "github"
+      icon: "github-square"
       url: "https://github.com/jordandarlington"
     - title: "LinkedIn"
       icon: "linkedin"
       url: "https://www.linkedin.com/in/jordan-darlington/"
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .jekyll-cache
