@@ -20,9 +20,9 @@ A GitHub Action that allows users to define and manage branch protection rules a
 
 ---
 
-## [GitHub X Notion: User Provisioning](https://jordandarlington.com/projectsgithub-notion-user-provisioning)
+<!-- ## [GitHub X Notion: User Provisioning](https://jordandarlington.com/projectsgithub-notion-user-provisioning)
 ![TypeScript](https://img.shields.io/badge/TypeScript-22272e?logo=typescript&logoColor=white&style=for-the-badge)
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-22272e?logo=githubactions&logoColor=white&style=for-the-badge)
 ![Notion API](https://img.shields.io/badge/Notion%20API-22272e?logo=notion&logoColor=white&style=for-the-badge)<br>
 A GitHub Action that provisions repository access for users in Notion, automating the process of managing user permissions based on Notion database entries.  
-- [GitHub](https://github.com/jordandarlington/github-notion-user-provisioning)
+- [GitHub](https://github.com/jordandarlington/github-notion-user-provisioning) -->
