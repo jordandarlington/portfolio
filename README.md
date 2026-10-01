@@ -25,7 +25,6 @@ Open http://localhost:8000. Press Ctrl+C to stop the server. Refresh the browser
 - `collections/pal-gamecube/index.html`: PAL GameCube checklist page.
 - `projects/game-boy-colour-input-test/index.html`: featured Game Boy Colour button-input test ROM page.
 - `projects/gba-input-test/index.html`: Game Boy Advance button-input test ROM page.
-- `projects/branch-protection-as-code/index.html`: earlier project detail page.
 - `404.html`: GitHub Pages error page.
 - `sitemap.xml`: add published page URLs when creating new pages.
 
