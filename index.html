@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="assets/styles.css">
     <script src="assets/theme.js"></script>
     <script src="assets/main.js" defer></script>
+    <script src="assets/data/collections.js" defer></script>
+    <script src="assets/collections.js" defer></script>
     <title>Jordan Darlington — Software Engineer</title>
   </head>
   <body>
@@ -21,7 +23,9 @@
     <div class="site-shell">
       <header class="site-header">
         <nav aria-label="Main navigation">
+          <a href="./" aria-current="page">Home</a>
           <a href="#projects">Projects</a>
+          <a href="#collections">Collections</a>
           <button class="theme-toggle" type="button" aria-label="Switch to dark theme" hidden><span aria-hidden="true">◐</span></button>
         </nav>
       </header>
@@ -36,18 +40,66 @@
           <a class="text-link" href="#projects">Explore my projects <span aria-hidden="true">↘</span></a>
         </section>
 
-        <a id="projects" class="bento-card featured-card card-link" href="projects/branch-protection-as-code/" aria-labelledby="project-title" aria-describedby="project-description">
-          <div class="card-topline"><p class="eyebrow">Featured project / GitHub Action</p><span class="card-arrow" aria-hidden="true">↗</span></div>
-          <h2 id="project-title">Branch Protection<br>As Code<span class="title-dot" aria-hidden="true">.</span></h2>
-          <p id="project-description">Define and manage branch protection rules as code. Repository configuration, made repeatable.</p>
-          <ul class="tags" aria-label="Technologies"><li>TypeScript</li><li>GitHub Actions</li><li>GitHub API</li></ul>
-          <div class="project-diagram" aria-hidden="true">
-            <div class="diagram-header"><span class="diagram-dots">● ● ●</span><span>branch-protection / workflow</span></div>
-            <div class="diagram-flow"><div><span>01</span><strong>Define</strong><small>Rules as code</small></div><span class="flow-arrow">→</span><div><span>02</span><strong>Automate</strong><small>GitHub Actions</small></div><span class="flow-arrow">→</span><div><span>03</span><strong>Apply</strong><small>GitHub API</small></div></div>
-            <div class="diagram-footer"><span>✓</span> A consistent configuration.</div>
-          </div>
+        <a id="projects" class="bento-card featured-card card-link" href="projects/game-boy-colour-input-test/" aria-labelledby="project-title" aria-describedby="project-description">
+          <div class="card-topline"><p class="eyebrow">Project Collection</p><span class="card-arrow" aria-hidden="true">↗</span></div>
+          <h2 id="project-title">Game Boy Colour<br>Input Test<span class="title-dot" aria-hidden="true">.</span></h2>
+          <p id="project-description">A Game Boy Colour ROM for testing button inputs. A practical project bringing software and retro handhelds together.</p>
+          <ul class="tags" aria-label="Project categories"><li>Game Boy Colour</li><li>Homebrew ROM</li><li>Button testing</li></ul>
           <span class="project-cta">Explore the project <span aria-hidden="true">↗</span></span>
         </a>
+
+        <a class="bento-card featured-card card-link" href="projects/gba-input-test/" aria-labelledby="gba-project-title" aria-describedby="gba-project-description">
+          <div class="card-topline"><p class="eyebrow">Project Collection</p><span class="card-arrow" aria-hidden="true">↗</span></div>
+          <h2 id="gba-project-title">Game Boy Advance<br>Input Test<span class="title-dot" aria-hidden="true">.</span></h2>
+          <p id="gba-project-description">A Game Boy Advance ROM for testing button inputs. Another tool for working with the retro handhelds in my collection.</p>
+          <ul class="tags" aria-label="Project categories"><li>Game Boy Advance</li><li>Homebrew ROM</li><li>Button testing</li></ul>
+          <span class="project-cta">Explore the project <span aria-hidden="true">↗</span></span>
+        </a>
+
+        <section id="collections" class="bento-card collections-card" aria-labelledby="collections-title">
+          <p class="eyebrow">Game Collection</p>
+          <h2 id="collections-title">On the shelf.</h2>
+          <p class="collections-description">Building the collection, one game at a time.</p>
+          <ul class="collection-links">
+            <li>
+              <a class="collection-link" href="collections/pal-n64/" data-collection-summary="pal-n64" aria-labelledby="n64-collection-title">
+                <span class="console-mark" aria-hidden="true">64</span>
+                <div class="collection-info">
+                  <h3 id="n64-collection-title">PAL N64 set <span aria-hidden="true">↗</span></h3>
+                  <p data-collection-count>Loading collection progress…</p>
+                  <progress data-collection-progress value="0" max="100" aria-label="PAL N64 owned games logged"></progress>
+                  <p class="collection-note" data-collection-note></p>
+                </div>
+                <span class="collection-percentage" data-collection-percentage>—</span>
+              </a>
+            </li>
+            <li>
+              <a class="collection-link" href="collections/pal-dreamcast/" data-collection-summary="pal-dreamcast" aria-labelledby="dreamcast-collection-title">
+                <span class="console-mark" aria-hidden="true">DC</span>
+                <div class="collection-info">
+                  <h3 id="dreamcast-collection-title">PAL Dreamcast set <span aria-hidden="true">↗</span></h3>
+                  <p data-collection-count>Loading collection progress…</p>
+                  <progress data-collection-progress value="0" max="100" aria-label="PAL Dreamcast owned games logged"></progress>
+                  <p class="collection-note" data-collection-note></p>
+                </div>
+                <span class="collection-percentage" data-collection-percentage>—</span>
+              </a>
+            </li>
+            <li>
+              <a class="collection-link" href="collections/pal-gamecube/" data-collection-summary="pal-gamecube" aria-labelledby="gamecube-collection-title">
+                <span class="console-mark" aria-hidden="true">GC</span>
+                <div class="collection-info">
+                  <h3 id="gamecube-collection-title">PAL GameCube set <span aria-hidden="true">↗</span></h3>
+                  <p data-collection-count>Loading collection progress…</p>
+                  <progress data-collection-progress value="0" max="100" aria-label="PAL GameCube owned games logged"></progress>
+                  <p class="collection-note" data-collection-note></p>
+                </div>
+                <span class="collection-percentage" data-collection-percentage>—</span>
+              </a>
+            </li>
+          </ul>
+          <noscript><p class="collection-note">Enable JavaScript to see collection percentages and the game checklist.</p></noscript>
+        </section>
 
       </main>
 
