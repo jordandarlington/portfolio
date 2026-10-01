@@ -1,17 +1,21 @@
-name: Deploy Portfolio
+name: Check and Deploy Portfolio
 
 on: 
   push:
     branches:
       - main
+      - modern-portfolio
+  pull_request:
+    branches:
+      - main
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 concurrency:
-  group: deploy-portfolio
+  group: portfolio-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -22,17 +26,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Set Up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'
-          bundler-cache: true
+      - name: Check JavaScript
+        run: |
+          node --check assets/theme.js
+          node --check assets/main.js
 
-      - name: Install Dependencies
-        run: bundle install
-
-      - name: Build Jekyll Site
-        run: bundle exec jekyll build -d ./_site
+      - name: Prepare static site
+        run: |
+          mkdir _site
+          cp index.html 404.html CNAME robots.txt sitemap.xml _site/
+          cp -R assets projects _site/
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
@@ -40,6 +43,7 @@ jobs:
           path: _site
 
   deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:
