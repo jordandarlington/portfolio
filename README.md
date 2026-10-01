@@ -24,7 +24,7 @@ Open http://localhost:8000. Press Ctrl+C to stop the server. Refresh the browser
 
 Use a directory with an `index.html` for each new page to keep clean URLs on GitHub Pages. Update relative asset paths when adding nested pages.
 
-The homepage uses a twelve-column grid on desktop with a full-width introduction above the featured project and about cards. The cards stack on tablets and phones. Edit the card content in `index.html`; sizing, colors, and spacing live in `assets/styles.css`.
+The homepage has a full-width introduction containing the bio, followed by a full-width featured project card. Both cards use two columns internally on desktop and stack their content on tablets and phones. Edit the card content in `index.html`; sizing, colors, and spacing live in `assets/styles.css`.
 
 `_site/` is generated deployment output. Edit the source files above rather than the copies inside `_site/`.
 
