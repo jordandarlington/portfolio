@@ -21,6 +21,8 @@ Open http://localhost:8000. Press Ctrl+C to stop the server. Refresh the browser
 - `assets/main.js`: theme switch and footer year. Content and navigation work without JavaScript.
 - `assets/data/collections.js`: collection catalogues and ownership records.
 - `assets/collections.js`: collection percentages, game lists, search, and ownership filters.
+- `assets/data/backlog.js`: games to play and their console icons.
+- `assets/backlog.js`: renders the homepage backlog.
 - `collections/pal-n64/index.html`: PAL N64 checklist page.
 - `collections/pal-dreamcast/index.html`: PAL Dreamcast checklist page.
 - `collections/pal-gamecube/index.html`: PAL GameCube checklist page.
@@ -29,7 +31,7 @@ Open http://localhost:8000. Press Ctrl+C to stop the server. Refresh the browser
 
 Use a directory with an `index.html` for each new page to keep clean URLs on GitHub Pages. Update relative asset paths when adding nested pages.
 
-The homepage contains an introduction, project cards, and collection progress. Project cards link directly to external sites; their GitHub URLs are currently placeholders. Edit card content and links in `index.html`, and layout in `assets/styles.css`.
+The homepage contains an introduction, project cards, collection progress, and a backlog. Project cards link directly to external sites; their GitHub URLs are currently placeholders. Edit card content and links in `index.html`, and layout in `assets/styles.css`.
 
 ## Updating collection progress
 
@@ -61,6 +63,36 @@ node scripts/check-collections.cjs
 Collection data and filtering require JavaScript. The pages display an explanatory fallback when it is disabled.
 
 `_site/` is generated deployment output. Edit the source files above rather than the copies inside `_site/`.
+
+## Updating the backlog
+
+Edit `games` in `assets/data/backlog.js`. Array order controls the display order. Each game needs a `title` and a `console` key; `year`, `genre`, `description`, and `note` are optional. For example:
+
+```js
+games: [
+  {
+    title: 'Super Mario Sunshine',
+    console: 'gamecube',
+    note: 'I want to give this another go.'
+  }
+]
+```
+
+The list starts empty. Available console keys are `gb`, `gbc`, `gba`, `ds`, `3ds`, `switch`, `switch2`, `gamecube`, `wii`, `wii-u`, `dreamcast`, `megadrive`, `nes`, `snes`, `ps1`, `ps2`, `psp`, `ps3`, `ps4`, `ps5`, and `n64`. Each game uses the same tinted badge style as the collection card. Coloured artwork retains its source colours; neutral dark lettering switches to light in dark mode.
+
+To add another console, save its SVG in `assets/logos/`, document its source in `assets/logos/README.md`, and add its name and icon path to `consoles`:
+
+```js
+newconsole: { name: 'Console name', icon: 'assets/logos/newconsole.svg' }
+```
+
+Year and genre appear beside the console name. Description is game information; note is your reason for playing. The backlog displays an empty message when there are no games and an explanatory fallback when JavaScript is disabled.
+
+Validate data, icon paths, and rendering before pushing:
+
+```sh
+node scripts/check-backlog.cjs
+```
 
 ## Deployment
 

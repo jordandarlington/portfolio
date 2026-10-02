@@ -32,7 +32,10 @@ jobs:
           node --check assets/main.js
           node --check assets/collections.js
           node --check assets/data/collections.js
+          node --check assets/backlog.js
+          node --check assets/data/backlog.js
           node scripts/check-collections.cjs
+          node scripts/check-backlog.cjs
 
       - name: Prepare static site
         run: |
