@@ -16,6 +16,7 @@ Open http://localhost:8000. Press Ctrl+C to stop the server. Refresh the browser
 
 - `index.html`: bento dashboard cards, homepage content, and links.
 - `assets/styles.css`: responsive layout, typography, and both color themes.
+- `assets/jordan-pixel-portrait-v2.png`: transparent pixel portrait displayed in the homepage introduction card. The original is preserved as `assets/jordan-pixel-portrait.png`.
 - `assets/theme.js`: applies the saved or system theme before the page paints.
 - `assets/main.js`: theme switch and footer year. Content and navigation work without JavaScript.
 - `assets/data/collections.js`: collection catalogues and ownership records.
