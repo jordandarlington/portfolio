@@ -596,20 +596,12 @@ window.portfolioCollections = [
     "scope": "Licensed European and Australian PAL game releases, including regional exclusives and the playable Zelda compilations Collector’s Edition and Ocarina of Time / Master Quest. Multi-game repackaging, demos, hardware utility discs (such as the Game Boy Player startup disc), unlicensed releases, and language or packaging variants are excluded.",
     "sources": [
       {
-        "name": "GameCube release list — PAL releases",
+        "name": "Wikipedia — GameCube games and regional releases",
         "url": "https://en.wikipedia.org/wiki/List_of_GameCube_games"
       },
       {
         "name": "GameCube Museum — PAL catalogue and variants",
         "url": "https://gamecube-museum.neocities.org/pal-list"
-      },
-      {
-        "name": "Nintendo — Mario Kart: Double Dash!!",
-        "url": "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/Mario-Kart-Double-Dash--268269.html"
-      },
-      {
-        "name": "Nintendo — WarioWare, Inc.: Mega Party Game$",
-        "url": "https://www.nintendo.com/en-gb/Games/Nintendo-GameCube/WarioWare-Inc-Mega-Party-Game-269325.html"
       }
     ],
     "owned": [
