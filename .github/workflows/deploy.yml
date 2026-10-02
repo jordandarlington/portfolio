@@ -38,7 +38,7 @@ jobs:
         run: |
           mkdir _site
           cp index.html 404.html CNAME robots.txt sitemap.xml _site/
-          cp -R assets projects collections _site/
+          cp -R assets collections _site/
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3

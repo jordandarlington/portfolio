@@ -33,9 +33,6 @@
       if (!collection) throw new Error('Unknown collection.');
       node.querySelector('[data-collection-percentage]').textContent = `${collection.percentage}%`;
       node.querySelector('[data-collection-count]').textContent = `${collection.counts.owned} of ${collection.counts.all} owned games logged`;
-      node.querySelector('[data-collection-note]').textContent = collection.counts.unrecorded
-        ? `${collection.counts.unrecorded} ${collection.counts.unrecorded === 1 ? 'game still needs' : 'games still need'} ownership logged.`
-        : 'All game ownership has been recorded.';
       const progress = node.querySelector('[data-collection-progress]');
       progress.max = collection.counts.all;
       progress.value = collection.counts.owned;
@@ -107,7 +104,6 @@
     summaryNodes.forEach((node) => {
       node.querySelector('[data-collection-percentage]').textContent = '—';
       node.querySelector('[data-collection-count]').textContent = 'Collection progress is unavailable.';
-      node.querySelector('[data-collection-note]').textContent = '';
       node.querySelector('[data-collection-progress]').removeAttribute('value');
     });
     if (page) page.querySelector('[data-collection-results]').textContent = 'The checklist could not be loaded. Please try refreshing the page.';

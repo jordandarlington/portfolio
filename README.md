@@ -1,6 +1,6 @@
 # Portfolio
 
-A static portfolio built with HTML, CSS, and a little JavaScript. No framework, Ruby, package installation, or build step is needed to preview it.
+A static portfolio built with HTML, CSS, and JavaScript. No dependencies or build step are needed to preview it.
 
 ## Local preview
 
@@ -16,7 +16,7 @@ Open http://localhost:8000. Press Ctrl+C to stop the server. Refresh the browser
 
 - `index.html`: bento dashboard cards, homepage content, and links.
 - `assets/styles.css`: responsive layout, typography, and both color themes.
-- `assets/jordan-pixel-portrait-v2.png`: transparent pixel portrait displayed in the homepage introduction card. The original is preserved as `assets/jordan-pixel-portrait.png`.
+- `assets/jordan-pixel-portrait-v2.png`: transparent pixel portrait displayed in the homepage introduction card.
 - `assets/theme.js`: applies the saved or system theme before the page paints.
 - `assets/main.js`: theme switch and footer year. Content and navigation work without JavaScript.
 - `assets/data/collections.js`: collection catalogues and ownership records.
@@ -24,14 +24,12 @@ Open http://localhost:8000. Press Ctrl+C to stop the server. Refresh the browser
 - `collections/pal-n64/index.html`: PAL N64 checklist page.
 - `collections/pal-dreamcast/index.html`: PAL Dreamcast checklist page.
 - `collections/pal-gamecube/index.html`: PAL GameCube checklist page.
-- `projects/game-boy-colour-input-test/index.html`: featured Game Boy Colour button-input test ROM page.
-- `projects/gba-input-test/index.html`: Game Boy Advance button-input test ROM page.
 - `404.html`: GitHub Pages error page.
 - `sitemap.xml`: add published page URLs when creating new pages.
 
 Use a directory with an `index.html` for each new page to keep clean URLs on GitHub Pages. Update relative asset paths when adding nested pages.
 
-The homepage has a full-width introduction, lavender project cards for the Game Boy Colour and Game Boy Advance input test ROMs, and a collection progress card, in that order. The project cards sit side by side on wider screens and stack on screens 800px wide or smaller. The collection card displays two consoles per row on wider screens and one per row on smaller screens. Ownership details are shown on each checklist page. Edit the card content in `index.html`; sizing, colors, and spacing live in `assets/styles.css`.
+The homepage contains an introduction, project cards, and collection progress. Project cards link directly to external sites; their GitHub URLs are currently placeholders. Edit card content and links in `index.html`, and layout in `assets/styles.css`.
 
 ## Updating collection progress
 
@@ -44,7 +42,7 @@ Edit `assets/data/collections.js`. Each collection contains its title catalogue 
 
 A title must appear in only one ownership array. Games in neither array are **Not logged**, so unrecorded inventory is distinct from games you know are missing. The percentage is owned games logged divided by the full catalogue, rounded to one decimal place. The same data drives the homepage and checklist. Visitors can search and filter the published list; ownership changes are made in the repository and deployed through GitHub Pages.
 
-Select the collection by its `key`: `pal-n64`, `pal-dreamcast`, or `pal-gamecube`. For example, record `"Sonic Adventure"` in Dreamcast's `owned` array or `"Super Mario Sunshine"` in GameCube's `owned` array. New collections start with ownership unrecorded; Super Mario 64 is already recorded as owned in the N64 set.
+Select the collection by its `key`: `pal-n64`, `pal-dreamcast`, or `pal-gamecube`.
 
 The catalogues count games rather than language, label, or packaging variants:
 
