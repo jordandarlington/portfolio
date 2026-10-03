@@ -23,9 +23,5 @@ window.portfolioBacklog = {
     ps5: { name: 'PlayStation 5', icon: 'assets/logos/ps5.svg' },
     n64: { name: 'Nintendo 64', icon: 'assets/logos/n64.svg' }
   },
-  games: [
-    { title: 'Grandia II', console: 'dreamcast' },
-    { title: 'Final Fantasy VII', console: 'ps1' },
-    { title: 'Dark Cloud', console: 'ps2' }
-  ]
+  games: []
 };
