@@ -32,13 +32,16 @@ jobs:
           node --check assets/main.js
           node --check assets/collections.js
           node --check assets/data/collections.js
+          node --check assets/backlog.js
+          node --check assets/data/backlog.js
           node scripts/check-collections.cjs
+          node scripts/check-backlog.cjs
 
       - name: Prepare static site
         run: |
           mkdir _site
           cp index.html 404.html CNAME robots.txt sitemap.xml _site/
-          cp -R assets projects collections _site/
+          cp -R assets collections _site/
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3

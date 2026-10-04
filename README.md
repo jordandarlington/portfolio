@@ -1,6 +1,6 @@
 # Portfolio
 
-A static portfolio built with HTML, CSS, and a little JavaScript. No framework, Ruby, package installation, or build step is needed to preview it.
+A static portfolio built with HTML, CSS, and JavaScript. No dependencies or build step are needed to preview it.
 
 ## Local preview
 
@@ -16,22 +16,22 @@ Open http://localhost:8000. Press Ctrl+C to stop the server. Refresh the browser
 
 - `index.html`: bento dashboard cards, homepage content, and links.
 - `assets/styles.css`: responsive layout, typography, and both color themes.
-- `assets/jordan-pixel-portrait-v2.png`: transparent pixel portrait displayed in the homepage introduction card. The original is preserved as `assets/jordan-pixel-portrait.png`.
+- `assets/jordan-pixel-portrait-v2.png`: transparent pixel portrait displayed in the homepage introduction card.
 - `assets/theme.js`: applies the saved or system theme before the page paints.
 - `assets/main.js`: theme switch and footer year. Content and navigation work without JavaScript.
 - `assets/data/collections.js`: collection catalogues and ownership records.
 - `assets/collections.js`: collection percentages, game lists, search, and ownership filters.
+- `assets/data/backlog.js`: games to play and their console icons.
+- `assets/backlog.js`: renders the homepage backlog.
 - `collections/pal-n64/index.html`: PAL N64 checklist page.
 - `collections/pal-dreamcast/index.html`: PAL Dreamcast checklist page.
 - `collections/pal-gamecube/index.html`: PAL GameCube checklist page.
-- `projects/game-boy-colour-input-test/index.html`: featured Game Boy Colour button-input test ROM page.
-- `projects/gba-input-test/index.html`: Game Boy Advance button-input test ROM page.
 - `404.html`: GitHub Pages error page.
 - `sitemap.xml`: add published page URLs when creating new pages.
 
 Use a directory with an `index.html` for each new page to keep clean URLs on GitHub Pages. Update relative asset paths when adding nested pages.
 
-The homepage has a full-width introduction, lavender project cards for the Game Boy Colour and Game Boy Advance input test ROMs, and a collection progress card, in that order. The project cards sit side by side on wider screens and stack on screens 800px wide or smaller. The collection card displays two consoles per row on wider screens and one per row on smaller screens. Ownership details are shown on each checklist page. Edit the card content in `index.html`; sizing, colors, and spacing live in `assets/styles.css`.
+The homepage contains an introduction, project cards, collection progress, and a backlog. Project cards link directly to external sites; their GitHub URLs are currently placeholders. Edit card content and links in `index.html`, and layout in `assets/styles.css`.
 
 ## Updating collection progress
 
@@ -44,7 +44,7 @@ Edit `assets/data/collections.js`. Each collection contains its title catalogue 
 
 A title must appear in only one ownership array. Games in neither array are **Not logged**, so unrecorded inventory is distinct from games you know are missing. The percentage is owned games logged divided by the full catalogue, rounded to one decimal place. The same data drives the homepage and checklist. Visitors can search and filter the published list; ownership changes are made in the repository and deployed through GitHub Pages.
 
-Select the collection by its `key`: `pal-n64`, `pal-dreamcast`, or `pal-gamecube`. For example, record `"Sonic Adventure"` in Dreamcast's `owned` array or `"Super Mario Sunshine"` in GameCube's `owned` array. New collections start with ownership unrecorded; Super Mario 64 is already recorded as owned in the N64 set.
+Select the collection by its `key`: `pal-n64`, `pal-dreamcast`, or `pal-gamecube`.
 
 The catalogues count games rather than language, label, or packaging variants:
 
@@ -63,6 +63,36 @@ node scripts/check-collections.cjs
 Collection data and filtering require JavaScript. The pages display an explanatory fallback when it is disabled.
 
 `_site/` is generated deployment output. Edit the source files above rather than the copies inside `_site/`.
+
+## Updating the backlog
+
+Edit `games` in `assets/data/backlog.js`. Array order controls the display order. Each game needs a `title` and a `console` key; `year`, `genre`, `description`, and `note` are optional. For example:
+
+```js
+games: [
+  {
+    title: 'Super Mario Sunshine',
+    console: 'gamecube',
+    note: 'I want to give this another go.'
+  }
+]
+```
+
+The list starts empty. Available console keys are `gb`, `gbc`, `gba`, `ds`, `3ds`, `switch`, `switch2`, `gamecube`, `wii`, `wii-u`, `dreamcast`, `megadrive`, `nes`, `snes`, `ps1`, `ps2`, `psp`, `ps3`, `ps4`, `ps5`, and `n64`. Each game uses the same tinted badge style as the collection card. Coloured artwork retains its source colours; neutral dark lettering switches to light in dark mode.
+
+To add another console, save its SVG in `assets/logos/`, document its source in `assets/logos/README.md`, and add its name and icon path to `consoles`:
+
+```js
+newconsole: { name: 'Console name', icon: 'assets/logos/newconsole.svg' }
+```
+
+Year and genre appear beside the console name. Description is game information; note is your reason for playing. The backlog displays an empty message when there are no games and an explanatory fallback when JavaScript is disabled.
+
+Validate data, icon paths, and rendering before pushing:
+
+```sh
+node scripts/check-backlog.cjs
+```
 
 ## Deployment
 
