@@ -3,6 +3,8 @@
 window.portfolioCollections = [
   {
     "key": "pal-n64",
+    "type": "complete-set",
+    "icon": "assets/logos/n64.svg",
     "name": "PAL N64 set",
     "platform": "Nintendo 64",
     "region": "PAL",
@@ -337,6 +339,8 @@ window.portfolioCollections = [
   },
   {
     "key": "pal-dreamcast",
+    "type": "complete-set",
+    "icon": "assets/logos/dreamcast.svg",
     "name": "PAL Dreamcast set",
     "platform": "Sega Dreamcast",
     "region": "PAL",
@@ -590,6 +594,8 @@ window.portfolioCollections = [
   },
   {
     "key": "pal-gamecube",
+    "type": "complete-set",
+    "icon": "assets/logos/gamecube.svg",
     "name": "PAL GameCube set",
     "platform": "Nintendo GameCube",
     "region": "PAL",
@@ -1108,5 +1114,17 @@ window.portfolioCollections = [
       "Zapper: One Wicked Cricket",
       "ZooCube"
     ]
+  },
+  {
+    "key": "custom-snes",
+    "type": "custom",
+    "icon": "assets/logos/snes.svg",
+    "name": "Custom SNES collection",
+    "platform": "SNES",
+    "scope": "A personal selection of SNES games, rather than a complete regional release set.",
+    "sources": [],
+    "owned": [],
+    "missing": [],
+    "titles": []
   }
 ];

@@ -44,7 +44,14 @@ Edit `assets/data/collections.js`. Each collection contains its title catalogue 
 
 A title must appear in only one ownership array. Games in neither array are **Not logged**, so unrecorded inventory is distinct from games you know are missing. The percentage is owned games logged divided by the full catalogue, rounded to one decimal place. The same data drives the homepage and checklist. Visitors can search and filter the published list; ownership changes are made in the repository and deployed through GitHub Pages.
 
-Select the collection by its `key`: `pal-n64`, `pal-dreamcast`, or `pal-gamecube`.
+The homepage displays all collections in one card. Click the filter pills below its heading to select regions and collection types. Click a selected pill again to remove that filter, or choose **All** to reset. A collection must match every selected pill. Selecting both **Complete set** and **Custom** shows no matches because each collection currently has one type. Available pills are generated from the collection data. Metadata pills below each collection title show its region (when specified) and type:
+
+- `complete-set`: a full release catalogue within a defined scope, such as the PAL N64, Dreamcast, and GameCube sets.
+- `custom`: a personal selection of games, such as `custom-snes`.
+
+Each entry has an `icon` path from `assets/logos/`. The homepage displays collections in array order and builds the metadata pills automatically from `region` and `type`. Add a matching checklist page under `collections/<key>/` and include it in `sitemap.xml`. Keep a matching homepage link in `index.html` so it also works without JavaScript.
+
+The custom SNES list starts empty. Add your chosen games to its `titles` array, then record ownership in `owned` or `missing`. Empty custom collections display “No games added yet” instead of a percentage. Custom collections can omit references; complete sets require them.
 
 The catalogues count games rather than language, label, or packaging variants:
 
@@ -52,7 +59,7 @@ The catalogues count games rather than language, label, or packaging variants:
 - **PAL Dreamcast — 216 entries:** licensed PAL releases from the [Dreamcast release list](https://en.wikipedia.org/wiki/List_of_Dreamcast_games), including Taxi 2: Le Jeu. Excludes Sega Swirl, demos, browser discs, unlicensed releases, and repackaged compilations. The [Blue Spine Games retail catalogue](https://www.bluespinegames.com/pal-retail) explains the distinction between the 216 retail games and Sega Swirl.
 - **PAL GameCube — 450 entries:** licensed PAL games from the [GameCube release list](https://en.wikipedia.org/wiki/List_of_GameCube_games), using PAL names where listed. Includes the playable Zelda compilations Collector's Edition and Ocarina of Time / Master Quest; excludes multi-game repackaging, demos, hardware utility discs, and unlicensed releases. The [GameCube Museum PAL catalogue](https://gamecube-museum.neocities.org/pal-list) also documents regional and disc variants.
 
-Each checklist's expandable scope section explains its inclusions and links its references. Counts are calculated from `titles`, so progress updates automatically when the catalogue changes.
+Each checklist's expandable scope section explains its inclusions and links any references. Counts are calculated from `titles`, so progress updates automatically when the catalogue changes.
 
 Validate edits before pushing:
 

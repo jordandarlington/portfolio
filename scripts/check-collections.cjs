@@ -10,8 +10,14 @@ const keys = new Set();
 for (const collection of collections) {
   assert.ok(typeof collection.key === 'string' && !keys.has(collection.key), 'Invalid or duplicate collection key.');
   keys.add(collection.key);
+  assert.ok(/^[a-z0-9-]+$/.test(collection.key), 'Unsafe collection key.');
+  assert.ok(['complete-set', 'custom'].includes(collection.type), 'Invalid collection type.');
+  if (collection.region !== undefined) assert.ok(typeof collection.region === 'string' && collection.region.trim(), 'Invalid collection region.');
+  assert.ok(typeof collection.icon === 'string' && /^assets\/logos\/[a-z0-9-]+\.svg$/.test(collection.icon), 'Invalid collection icon path.');
+  assert.ok(fs.existsSync(collection.icon), `Missing icon for ${collection.key}.`);
   assert.ok(fs.existsSync(`collections/${collection.key}/index.html`), `Missing page for ${collection.key}.`);
-  assert.ok(Array.isArray(collection.titles) && collection.titles.length, 'Empty catalogue.');
+  assert.ok(Array.isArray(collection.titles), 'Invalid catalogue.');
+  if (collection.type === 'complete-set') assert.ok(collection.titles.length, 'Empty complete-set catalogue.');
   assert.ok(collection.titles.every((title) => typeof title === 'string' && title.trim()), 'Invalid title.');
   const titles = new Set(collection.titles);
   assert.equal(titles.size, collection.titles.length, 'Duplicate game titles.');
@@ -22,8 +28,10 @@ for (const collection of collections) {
   }
   assert.ok(collection.owned.every((title) => !collection.missing.includes(title)), 'A game cannot be both owned and missing.');
   assert.ok(typeof collection.scope === 'string' && collection.scope.length, 'Missing scope.');
-  assert.ok(Array.isArray(collection.sources) && collection.sources.length, 'Missing checklist references.');
-  for (const source of collection.sources) {
+  const sources = collection.sources || [];
+  assert.ok(Array.isArray(sources), 'Invalid checklist references.');
+  if (collection.type === 'complete-set') assert.ok(sources.length, 'Missing complete-set checklist references.');
+  for (const source of sources) {
     assert.ok(source.name && new URL(source.url).protocol === 'https:', 'Invalid reference.');
   }
   console.log(`${collection.name}: ${titles.size} titles, ${collection.owned.length} owned, ${collection.missing.length} missing; data valid.`);

@@ -72,14 +72,15 @@
 
         <section id="collections" class="bento-card collections-card" aria-labelledby="collections-title">
           <h2 id="collections-title">On the shelf.</h2>
-          <p class="collections-description">Building the collection, one game at a time.</p>
-          <ul class="collection-links">
+          <div class="collection-filter-bar" data-collection-filters role="group" aria-label="Filter collections" hidden></div>
+          <p class="visually-hidden" data-collection-filter-status role="status" aria-live="polite"></p>
+          <ul class="collection-links" data-collection-list>
             <li>
               <a class="collection-link" href="collections/pal-n64/" data-collection-summary="pal-n64" aria-labelledby="n64-collection-title">
                 <span class="console-mark" aria-hidden="true"><img src="assets/logos/n64.svg" width="28" height="28" alt=""></span>
                 <div class="collection-info">
                   <h3 id="n64-collection-title">PAL N64 set <span aria-hidden="true">↗</span></h3>
-                  <p data-collection-count>Loading collection progress…</p>
+                  <div class="collection-tags" data-collection-tags><span class="collection-tag" title="Region: PAL"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM3 12h18M12 3c4 5 4 13 0 18-4-5-4-13 0-18Z"/></svg>PAL</span><span class="collection-tag" title="Complete release set"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 2h14v14M5 5h14v14M2 8h14v14H2z"/></svg>Complete set</span></div>
                   <progress data-collection-progress value="0" max="100" aria-label="PAL N64 owned games logged"></progress>
                 </div>
                 <span class="collection-percentage" data-collection-percentage>—</span>
@@ -90,7 +91,7 @@
                 <span class="console-mark" aria-hidden="true"><img src="assets/logos/dreamcast.svg" width="28" height="28" alt=""></span>
                 <div class="collection-info">
                   <h3 id="dreamcast-collection-title">PAL Dreamcast set <span aria-hidden="true">↗</span></h3>
-                  <p data-collection-count>Loading collection progress…</p>
+                  <div class="collection-tags" data-collection-tags><span class="collection-tag" title="Region: PAL"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM3 12h18M12 3c4 5 4 13 0 18-4-5-4-13 0-18Z"/></svg>PAL</span><span class="collection-tag" title="Complete release set"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 2h14v14M5 5h14v14M2 8h14v14H2z"/></svg>Complete set</span></div>
                   <progress data-collection-progress value="0" max="100" aria-label="PAL Dreamcast owned games logged"></progress>
                 </div>
                 <span class="collection-percentage" data-collection-percentage>—</span>
@@ -101,13 +102,25 @@
                 <span class="console-mark" aria-hidden="true"><img src="assets/logos/gamecube.svg" width="28" height="28" alt=""></span>
                 <div class="collection-info">
                   <h3 id="gamecube-collection-title">PAL GameCube set <span aria-hidden="true">↗</span></h3>
-                  <p data-collection-count>Loading collection progress…</p>
+                  <div class="collection-tags" data-collection-tags><span class="collection-tag" title="Region: PAL"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM3 12h18M12 3c4 5 4 13 0 18-4-5-4-13 0-18Z"/></svg>PAL</span><span class="collection-tag" title="Complete release set"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 2h14v14M5 5h14v14M2 8h14v14H2z"/></svg>Complete set</span></div>
                   <progress data-collection-progress value="0" max="100" aria-label="PAL GameCube owned games logged"></progress>
                 </div>
                 <span class="collection-percentage" data-collection-percentage>—</span>
               </a>
             </li>
+            <li>
+              <a class="collection-link" href="collections/custom-snes/" data-collection-summary="custom-snes" aria-labelledby="snes-collection-title">
+                <span class="console-mark" aria-hidden="true"><img src="assets/logos/snes.svg" width="28" height="28" alt=""></span>
+                <div class="collection-info">
+                  <h3 id="snes-collection-title">Custom SNES collection <span aria-hidden="true">↗</span></h3>
+                  <div class="collection-tags" data-collection-tags><span class="collection-tag" title="Personal selection of games"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg>Custom</span></div>
+                  <progress data-collection-progress value="0" max="100" aria-label="Custom SNES owned games logged"></progress>
+                </div>
+                <span class="collection-percentage" data-collection-percentage>—</span>
+              </a>
+            </li>
           </ul>
+          <p class="collection-group-empty" data-collection-empty hidden>No collections yet.</p>
           <noscript><p class="collection-note">Enable JavaScript to see collection progress.</p></noscript>
         </section>
 

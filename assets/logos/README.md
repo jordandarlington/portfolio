@@ -10,7 +10,7 @@ Console names and logos belong to their respective owners.
 
 ## Backlog console logos
 
-The following assets come from Wikimedia Commons. Primary symbols and console wordmarks retain their drawing paths and source colours. Small subtitles, trademarks, and background panels are removed where practical, and bounds are tightened for the 28px badges. Neutral dark lettering switches to light when the embedding page uses dark mode. Each source page includes its authorship and licensing information. The Mega Drive asset uses the Japanese MD symbol; the SNES asset uses the PAL/Super Famicom symbol.
+The following assets come from Wikimedia Commons. Primary symbols and console wordmarks retain their drawing paths and source colours. Small subtitles, trademarks, and background panels are removed where practical, and bounds are tightened for the 28px badges. Neutral dark lettering switches to light when the embedding page uses dark mode. Each source page includes its authorship and licensing information. The Mega Drive asset uses the Japanese MD symbol; the SNES asset uses the PAL/Super Famicom symbol, with an expanded viewBox to keep all four shapes visible.
 
 | Asset | Source |
 | --- | --- |
