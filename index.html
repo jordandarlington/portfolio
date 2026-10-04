@@ -40,7 +40,22 @@
       <main id="main" class="dashboard">
         <section class="bento-card intro-card" aria-labelledby="intro-title">
           <h1 id="intro-title">I'm Jordan,<br>I build software<br><span class="highlight">and collect games.</span></h1>
-          <img class="intro-portrait" src="assets/jordan-pixel-portrait-v2.png" width="1254" height="1254" alt="Pixel portrait of Jordan with dark brown hair, a beard, and glasses">
+          <span class="intro-portrait">
+            <svg class="portrait-colour-filter" width="0" height="0" aria-hidden="true" focusable="false">
+              <defs>
+                <!-- Match the hover portrait's RGB shades to the original artwork. -->
+                <filter id="portrait-colour-match" color-interpolation-filters="sRGB">
+                  <feComponentTransfer>
+                    <feFuncR type="linear" slope="1.008523" intercept="-0.004219" />
+                    <feFuncG type="linear" slope="0.980151" intercept="0.002297" />
+                    <feFuncB type="linear" slope="0.996533" intercept="-0.001717" />
+                  </feComponentTransfer>
+                </filter>
+              </defs>
+            </svg>
+            <img class="intro-portrait-default" src="assets/jordan-pixel-portrait-v2.png" width="1254" height="1254" alt="Pixel portrait of Jordan with dark brown hair, a beard, and glasses">
+            <img class="intro-portrait-happy" src="assets/jordan-pixel-portrait-happy.png" width="1254" height="1254" alt="" aria-hidden="true">
+          </span>
         </section>
 
         <a id="projects" class="bento-card featured-card card-link" href="https://github.com" aria-labelledby="project-title" aria-describedby="project-description">
